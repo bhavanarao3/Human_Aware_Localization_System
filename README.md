@@ -13,3 +13,5 @@ The proposal document and QuadChart is located in the proposal directory. The pr
 The quadchart is a concise, one-page graphical summary used to present key information about a project or proposal. It is divided into four quadrants, including sections such as project objectives, technical approach, activity diagram, and the schedule. This format is designed to provide decision-makers with a clear, high-level overview of the project at a glance.
 
 Additionally a short video discussing the project overview, proposed design and methodology is as below:
+[Video](https://www.canva.com/design/DAGTmxytqVQ/002m6bJGIoaTDRKGFH7m0Q/view?utm_content=DAGTmxytqVQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel)
+
