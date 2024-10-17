@@ -19,3 +19,6 @@ Additionally a short video discussing the project overview, proposed design and 
 
 The initial product backlog is linked here: [Product Backlog](https://docs.google.com/spreadsheets/d/1BkUKRTix_gpAeI8nEOIU-Vc7oSzQCU-JUhH3wqEv24I/edit?usp=sharing)
 
+![image](https://github.com/user-attachments/assets/96eedb68-ad43-4447-aace-59f3ea199413)
+
+
