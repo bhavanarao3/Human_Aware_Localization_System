@@ -15,3 +15,7 @@ The quadchart is a concise, one-page graphical summary used to present key infor
 Additionally a short video discussing the project overview, proposed design and methodology is as below:
 [Video](https://www.canva.com/design/DAGTmxytqVQ/002m6bJGIoaTDRKGFH7m0Q/view?utm_content=DAGTmxytqVQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel)
 
+![image](https://github.com/user-attachments/assets/22ce6b5f-0727-4427-b450-d9db92c255a9)
+
+The initial product backlog is linked here: [Product Backlog](https://docs.google.com/spreadsheets/d/1BkUKRTix_gpAeI8nEOIU-Vc7oSzQCU-JUhH3wqEv24I/edit?usp=sharing)
+
