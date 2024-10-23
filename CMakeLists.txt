@@ -25,6 +25,11 @@ enable_testing()
 include(GoogleTest)
 
 
+# Find OpenCV package
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+
 #
 # Doxygen Support check if Doxygen is installed
 # ref: https://cmake.org/cmake/help/latest/module/FindDoxygen.html
@@ -94,6 +99,7 @@ endif()
 #
 add_subdirectory(libs)
 add_subdirectory(app)
+add_subdirectory(test)
 
 
 # create a target to build documentation
@@ -121,11 +127,10 @@ if(WANT_COVERAGE)
   # Use gcovr insetad of lcov if you want to see branch coverage as well
   setup_target_for_coverage_gcovr_html ( # use gcovr to generate coverage report
     NAME app_coverage          # target name
-    # EXECUTABLE shell-app       # what to run insdie the build directory?
+    EXECUTABLE shell-app       # what to run insdie the build directory?
    
-    # EXCLUDE
-    # "test/test.cpp"    # App does not run unit test, so don't analyze it
-    # "test/main.cpp"    # App does not run unit test, so don't analyze it
+    EXCLUDE
+    "test/test.cpp"    # App does not run unit test, so don't analyze it
     )
 
 endif()
