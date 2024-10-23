@@ -28,7 +28,6 @@ include(GoogleTest)
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-
 #
 # Doxygen Support check if Doxygen is installed
 # ref: https://cmake.org/cmake/help/latest/module/FindDoxygen.html
