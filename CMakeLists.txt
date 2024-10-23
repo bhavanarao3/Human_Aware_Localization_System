@@ -24,6 +24,10 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 include(GoogleTest)
 
+# Find OpenCV package
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 
 #
 # Doxygen Support check if Doxygen is installed
