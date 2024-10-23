@@ -97,7 +97,7 @@ endif()
 #
 add_subdirectory(libs)
 add_subdirectory(app)
-# add_subdirectory(test)
+add_subdirectory(test)
 
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
@@ -127,9 +127,9 @@ if(WANT_COVERAGE)
     NAME app_coverage          # target name
     EXECUTABLE shell-app       # what to run insdie the build directory?
    
-    # EXCLUDE
-    # "test/test.cpp"    # App does not run unit test, so don't analyze it
-    # "test/main.cpp"    # App does not run unit test, so don't analyze it
+    EXCLUDE
+    "test/test.cpp"    # App does not run unit test, so don't analyze it
+    "test/main.cpp"    # App does not run unit test, so don't analyze it
     )
 
 endif()

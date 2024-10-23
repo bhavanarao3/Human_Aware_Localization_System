@@ -30,7 +30,7 @@ Detector::Detector(const string& model_path, const string& class_names_path) {
 
 Mat Detector::PreProcess(const Mat& input_image) {
     // Return the input image as-is
-    return input_image;
+    return cv::Mat();
 }
 
 /**
