@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/bhavana/midterm/Human_Aware_Localization_System/build/libs/human_detector",
+  "command": "/usr/bin/c++  -I/usr/include/opencv4 -I/home/bhavana/midterm/Human_Aware_Localization_System/libs/human_detector/. -std=gnu++14 -o CMakeFiles/myHumanDetector.dir/detector.cpp.o -c /home/bhavana/midterm/Human_Aware_Localization_System/libs/human_detector/detector.cpp",
+  "file": "/home/bhavana/midterm/Human_Aware_Localization_System/libs/human_detector/detector.cpp"
+},
+{
+  "directory": "/home/bhavana/midterm/Human_Aware_Localization_System/build/app",
+  "command": "/usr/bin/c++  -I/home/bhavana/midterm/Human_Aware_Localization_System/include -I/home/bhavana/midterm/Human_Aware_Localization_System/libs/human_detector/. -isystem /usr/include/opencv4 -std=gnu++14 -o CMakeFiles/shell-app.dir/main.cpp.o -c /home/bhavana/midterm/Human_Aware_Localization_System/app/main.cpp",
+  "file": "/home/bhavana/midterm/Human_Aware_Localization_System/app/main.cpp"
+},
+{
+  "directory": "/home/bhavana/midterm/Human_Aware_Localization_System/build/test",
+  "command": "/usr/bin/c++  -I/home/bhavana/midterm/Human_Aware_Localization_System/include -I/home/bhavana/midterm/Human_Aware_Localization_System/libs/human_detector/. -isystem /usr/include/opencv4 -isystem /home/bhavana/midterm/Human_Aware_Localization_System/build/_deps/googletest-src/googletest/include -isystem /home/bhavana/midterm/Human_Aware_Localization_System/build/_deps/googletest-src/googletest -std=gnu++14 -o CMakeFiles/cpp-test.dir/test.cpp.o -c /home/bhavana/midterm/Human_Aware_Localization_System/test/test.cpp",
+  "file": "/home/bhavana/midterm/Human_Aware_Localization_System/test/test.cpp"
+}
+]
