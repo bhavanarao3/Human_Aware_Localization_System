@@ -1,5 +1,0 @@
-if(EXISTS "/home/bhavana/midterm/Human_Aware_Localization_System/build/test/cpp-test[1]_tests.cmake")
-  include("/home/bhavana/midterm/Human_Aware_Localization_System/build/test/cpp-test[1]_tests.cmake")
-else()
-  add_test(cpp-test_NOT_BUILT cpp-test_NOT_BUILT)
-endif()

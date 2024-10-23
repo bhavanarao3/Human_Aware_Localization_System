@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmyHumanDetector.a CMakeFiles/myHumanDetector.dir/detector.cpp.o
-/usr/bin/ranlib libmyHumanDetector.a

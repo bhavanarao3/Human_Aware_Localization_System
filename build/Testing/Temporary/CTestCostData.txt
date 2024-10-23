@@ -1,6 +1,0 @@
-DetectorTest.DetectTest 1 0.0357431
-DetectorTest.PreProcessTest 1 0.0257444
-DetectorTest.PostProcessTest 0 0
-DetectorTest.DrawLabelTest 1 0.0247525
----
-DetectorTest.PostProcessTest
