@@ -39,4 +39,3 @@ class Tracker {
   cv::Mat plotCoordinates(const std::vector<cv::Point>& prediction_pixels, const std::vector<std::vector<float>>& coordinates, cv::Mat& frame);
 };
 
-#endif  // TRACKER_HPP
