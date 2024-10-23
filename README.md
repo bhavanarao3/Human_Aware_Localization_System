@@ -1,7 +1,6 @@
 
 # Human_Aware_Localization_System
 ENPM700-MidTerm Project
-# C++ Boilerplate v2 Badges
 
 # C++ Boilerplate v2 Badges
 ![CICD Workflow status](https://github.com/bhavanarao3/Human_Aware_Localization_System/actions/workflows/run-unit-test-and-upload-codecov.yml/badge.svg) [![codecov](https://codecov.io/gh/bhavanarao3/Human_Aware_Localization_System/graph/badge.svg?token=8o7v3LGmTM)](https://codecov.io/gh/bhavanarao3/Human_Aware_Localization_System) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
