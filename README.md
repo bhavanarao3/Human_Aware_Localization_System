@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Human_Aware_Localization_System
 ENPM700-MidTerm Project
 
@@ -22,3 +23,6 @@ The initial product backlog is linked here: [Product Backlog](https://docs.googl
 ![image](https://github.com/user-attachments/assets/96eedb68-ad43-4447-aace-59f3ea199413)
 
 
+=======
+
+>>>>>>> iteration1
