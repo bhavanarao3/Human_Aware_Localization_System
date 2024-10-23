@@ -24,9 +24,11 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 include(GoogleTest)
 
+
 # Find OpenCV package
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
+
 
 #
 # Doxygen Support check if Doxygen is installed
@@ -99,12 +101,12 @@ add_subdirectory(libs)
 add_subdirectory(app)
 add_subdirectory(test)
 
+
 # create a target to build documentation
 doxygen_add_docs(docs           # target name
   # List of files or directories
   ${PROJECT_SOURCE_DIR}/app
   ${PROJECT_SOURCE_DIR}/libs
-  ${PROJECT_SOURCE_DIR}/include
   )
 
 # create targets for building code coverage reports
@@ -129,7 +131,6 @@ if(WANT_COVERAGE)
    
     EXCLUDE
     "test/test.cpp"    # App does not run unit test, so don't analyze it
-    "test/main.cpp"    # App does not run unit test, so don't analyze it
     )
 
 endif()
