@@ -10,6 +10,8 @@ ENPM700-MidTerm Project
 
 Phase 1 involves setting up the directory structure for the project, adding license and CI/CD badge. The .pt weight file for YOLOv5 is converted to .onnx file so that it is compatible with C++. 
 
+The video explaining the Phase 1 status of the API process is as given: [Video](https://www.canva.com/design/DAGUb85ULqw/5sof80gLWsIjkFBiL5oSjw/view?utm_content=DAGUb85ULqw&utm_campaign=designshare&utm_medium=link&utm_source=recording_view)
+
 ## Phase 0
 
 - Driver: Bhavana B Rao
