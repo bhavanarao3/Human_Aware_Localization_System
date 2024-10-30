@@ -152,3 +152,9 @@ Mat Detector::Detect(const Mat& input_image) {
     net_.forward(outputs, net_.getUnconnectedOutLayersNames());
     return PostProcess(processed_image, outputs);
 }
+// Implementation of GetBoundingBoxes() to retrieve bounding boxes
+std::vector<cv::Rect> Detector::GetBoundingBoxes() const {
+    return bounding_boxes_;
+}
+
+
