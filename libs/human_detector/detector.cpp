@@ -8,7 +8,17 @@ using namespace cv;
 using namespace dnn;
 using namespace std;
 
+// Constants.
+const float INPUT_WIDTH = 640.0;
+const float INPUT_HEIGHT = 640.0;
+const float SCORE_THRESHOLD = 0.5;
+const float NMS_THRESHOLD = 0.45;
+const float CONFIDENCE_THRESHOLD = 0.45;
 
+const Scalar BLACK = Scalar(0, 0, 0);
+const Scalar BLUE = Scalar(255, 178, 50);
+const Scalar YELLOW = Scalar(0, 255, 255);
+const Scalar RED = Scalar(0, 0, 255);
 
 /**
  * @brief Constructor for the Detector class. Initializes the YOLO model and loads class names.
@@ -92,6 +102,21 @@ Mat Detector::PostProcess(Mat& input_image, const vector<Mat>& outputs) {
         data += dimensions;
     }
 
+    vector<int> indices;
+    NMSBoxes(boxes, confidences, SCORE_THRESHOLD, NMS_THRESHOLD, indices);
+
+    for (int i = 0; i < indices.size(); ++i) {
+        int idx = indices[i];
+        Rect box = boxes[idx];
+        bounding_boxes_.push_back(box);  // Store bounding box
+        class_ids_.push_back(class_ids[idx]);
+        confidences_.push_back(confidences[idx]);
+
+        rectangle(input_image, box, BLUE, 3);
+        string label = format("%.2f", confidences[idx]);
+        label = class_names_[class_ids[idx]] + ":" + label;
+        DrawLabel(input_image, label, box.x, box.y);
+    }
 
     return input_image;
 }
@@ -105,7 +130,13 @@ Mat Detector::PostProcess(Mat& input_image, const vector<Mat>& outputs) {
  */
 
 void Detector::DrawLabel(Mat& input_image, const string& label, int left, int top) {
-
+    int baseLine;
+    Size label_size = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.7, 1, &baseLine);
+    top = max(top, label_size.height);
+    Point tlc(left, top);
+    Point brc(left + label_size.width, top + label_size.height + baseLine);
+    rectangle(input_image, tlc, brc, BLACK, FILLED);
+    putText(input_image, label, Point(left, top + label_size.height), FONT_HERSHEY_SIMPLEX, 0.7, YELLOW, 1);
 }
 
 /**
@@ -121,5 +152,3 @@ Mat Detector::Detect(const Mat& input_image) {
     net_.forward(outputs, net_.getUnconnectedOutLayersNames());
     return PostProcess(processed_image, outputs);
 }
-
-
