@@ -10,6 +10,8 @@ add_executable(shell-app
 target_include_directories(shell-app PUBLIC
   # list inclue directories:
   ${CMAKE_SOURCE_DIR}/include
+  ${CMAKE_SOURCE_DIR}/libs/human_tracker
+  ${CMAKE_SOURCE_DIR}/libs/human_detector
   ${OpenCV_INCLUDE_DIRS}  # Add OpenCV include directories
 )
 
@@ -17,6 +19,7 @@ target_include_directories(shell-app PUBLIC
 target_link_libraries(shell-app PUBLIC 
   # list of libraries
   myHumanDetector
+  myHumanTracker
   ${OpenCV_LIBS}
   )
 
