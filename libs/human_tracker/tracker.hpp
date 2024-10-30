@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TRACKER_HPP
+#define TRACKER_HPP
 
 #include <opencv2/opencv.hpp>
 #include <vector>
@@ -14,13 +15,27 @@ class Tracker {
   float vfov_;  ///< Vertical Field of View.
   float pixel_size_;  ///< Pixel size for conversion.
   const std::vector<int> resolution_;  ///< Resolution of the camera.
+  cv::VideoCapture cap_;  ///< OpenCV VideoCapture object for the DroidCam stream.
 
   float degreesToRadians(float degrees);
   float radiansToDegrees(float radians);
 
  public:
-  Tracker(float height, float focal_length, float hfov, float vfov, std::vector<int> resolution, float pixel_size);
+  Tracker(float height, float focal_length, float hfov, float vfov, std::vector<int> resolution, float pixel_size, const std::string& droidcam_url);
   ~Tracker();
+
+  /**
+   * @brief Initializes the video capture from DroidCam.
+   * @return true if successful, false otherwise.
+   */
+  bool initializeCapture();
+
+  /**
+   * @brief Captures a frame from the DroidCam.
+   * @param frame Output frame captured from the DroidCam.
+   * @return true if frame captured successfully, false otherwise.
+   */
+  bool captureFrame(cv::Mat& frame);
 
   /**
    * @brief Converts pixel coordinates from detection to camera coordinate frame.
@@ -39,3 +54,4 @@ class Tracker {
   cv::Mat plotCoordinates(const std::vector<cv::Point>& prediction_pixels, const std::vector<std::vector<float>>& coordinates, cv::Mat& frame);
 };
 
+#endif

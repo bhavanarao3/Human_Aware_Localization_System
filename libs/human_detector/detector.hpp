@@ -25,9 +25,18 @@ class Detector {
    */
   cv::Mat Detect(const cv::Mat& input_image);
 
+  /**
+   * @brief Method to get the detected bounding boxes after detection.
+   * @return A vector of bounding boxes (cv::Rect objects).
+   */
+  std::vector<cv::Rect> GetBoundingBoxes() const;
+
  private:
   cv::dnn::Net net_;  ///< The deep learning model.
   std::vector<std::string> class_names_;  ///< Class names for object detection.
+  std::vector<cv::Rect> bounding_boxes_;  ///< Bounding boxes of detected objects.
+  std::vector<int> class_ids_;  ///< Class IDs of detected objects.
+  std::vector<float> confidences_;  ///< Confidences of detected objects.
 
   /**
    * @brief Preprocesses the image for YOLO input.
