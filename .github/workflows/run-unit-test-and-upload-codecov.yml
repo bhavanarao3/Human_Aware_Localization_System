@@ -1,9 +1,9 @@
 ##############################################################################
 #
-# GitGub CI workflow syntax spec:
+# GitHub CI workflow syntax spec:
 #    https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 #
-# CodeCov github action setup:
+# CodeCov GitHub action setup:
 #    https://github.com/codecov/codecov-action
 #
 # CodeCov badge setup:
@@ -37,17 +37,19 @@ jobs:
       # We want to use GitHub CI checkout version 3 to check out our branch
       - uses: actions/checkout@v3
 
-      # Install some system pacakges
+      # Install some system packages
       - name: Install build packages
         run: |
           sudo apt update
           sudo apt install -y software-properties-common
-          sudo apt install -y doxygen lcov gcovr
+          sudo add-apt-repository -y ppa:opencv/ppa  # Add OpenCV PPA
+          sudo apt update
+          sudo apt install -y doxygen lcov gcovr libopencv-dev  # Install OpenCV
 
       # Build, run unit test, and generate coverage report
-      - name: Configure CMake flags and build exectables
+      - name: Configure CMake flags and build executables
         run: |
-          cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -S ./ -B build/
+          cmake -D WANT_COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -D OpenCV_DIR=/usr/lib/x86_64-linux-gnu/cmake/opencv4 -S ./ -B build/
           cmake --build build/ --clean-first --target all test_coverage
           cat build/test_coverage.info
 
@@ -55,8 +57,8 @@ jobs:
       - name: Upload coverage result to CodeCov
         uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # required (must add token in your github repo)
-          files: ${{github.workspace}}/build/test_coverage.info
+          token: ${{ secrets.CODECOV_TOKEN }} # required (must add token in your GitHub repo)
+          files: ${{ github.workspace }}/build/test_coverage.info
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
           disable_search: true # optional (default = false)
