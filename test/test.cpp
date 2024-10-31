@@ -85,8 +85,8 @@ class DetectorTest : public ::testing::Test {
   void SetUp() override {
     // Initialize the detector with dummy paths.
     detector = std::make_unique<Detector>(
-        "models/yolov5s.onnx",
-        "models/coco.names");
+        "../../models/yolov5s.onnx",
+        "../../models/coco.names");
   }
 
   std::unique_ptr<Detector> detector;  // Use unique_ptr
@@ -101,7 +101,7 @@ TEST_F(DetectorTest, InitializationTest) {
 TEST_F(DetectorTest, LoadInputImageTest) {
   cv::Mat input_image =
       cv::imread(
-          "images/test_image.jpg");  // Replace with your input image path
+          "../../images/test_image.jpg");  // Replace with your input image path
   ASSERT_FALSE(input_image.empty())
       << "Input image should be loaded successfully.";
 
@@ -115,7 +115,7 @@ TEST_F(DetectorTest, LoadInputImageTest) {
 TEST_F(DetectorTest, DetectReturnsSameImageSize) {
   cv::Mat input_image =
       cv::imread(
-          "images/test_image.jpg");  // Replace with your input image path
+          "../../images/test_image.jpg");  // Replace with your input image path
   ASSERT_FALSE(input_image.empty())
       << "Input image should be loaded successfully.";
 
@@ -130,7 +130,7 @@ TEST_F(DetectorTest, DetectReturnsSameImageSize) {
 TEST_F(DetectorTest, DetectReturnsNonEmptyImage) {
   cv::Mat input_image =
       cv::imread(
-          "images/test_image.jpg");  // Replace with your input image path
+          "../../images/test_image.jpg");  // Replace with your input image path
   ASSERT_FALSE(input_image.empty())
       << "Input image should be loaded successfully.";
 
