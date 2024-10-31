@@ -8,7 +8,7 @@
 class TrackerTest : public ::testing::Test {
  protected:
   void SetUp() override {
-    // Initialize the Tracker with test parameters and enable test mode
+    // Initialize the Tracker with test parameters and load an image instead of camera feed
     height = 1.5;             // Example height in meters
     focal_length = 0.5;       // Example focal length in meters
     hfov = 60.0;              // Horizontal field of view in degrees
@@ -18,7 +18,7 @@ class TrackerTest : public ::testing::Test {
     test_image_path = "../../images/test_image.jpg";  // Path to the test image
 
     tracker = std::make_unique<Tracker>(height, focal_length, hfov, vfov,
-                                        resolution, pixel_size, "", true);  // Use test mode
+                                        resolution, pixel_size, test_image_path);  // Load test image
   }
 
   std::unique_ptr<Tracker> tracker;
@@ -34,7 +34,7 @@ class TrackerTest : public ::testing::Test {
 // Test to ensure a frame can be captured from a test image.
 TEST_F(TrackerTest, CaptureFrameFromImageTest) {
   cv::Mat frame;
-  EXPECT_TRUE(tracker->captureFrame(frame, test_image_path))
+  EXPECT_TRUE(tracker->captureFrame(frame))
       << "Frame should be captured successfully from the test image.";
   EXPECT_FALSE(frame.empty()) << "Captured frame from the test image should not be empty.";
 }
