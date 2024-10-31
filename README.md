@@ -26,7 +26,7 @@ HALS demonstrates high performance and reliability, even in CPU-bound environmen
 ### AIP Workflow
 This project was developed using the Agile Development Process (AIP) along with pair programming (with a driver and navigator), with a focus on test-driven development (TDD). This sheet has the product backlog, iteration backlogs, and work log for each task done to develop HALS. The end of each iteration is even tagged to distinguish each sprint. Further, the link to the sprint planning and review meeting notes devised to overview each iteration sprint to develop HALS in the most efficient way possible is attached [here](https://docs.google.com/spreadsheets/d/1BkUKRTix_gpAeI8nEOIU-Vc7oSzQCU-JUhH3wqEv24I/edit?gid=0#gid=0).
 
-A short video providing a brief overview of the project and the details explaining the AIP process used is embedded below. A direct link to the same can also be found [here]()
+A short video providing a brief overview of the project and the details explaining the AIP process used is embedded below. A direct link to the same can also be found [here](https://drive.google.com/file/d/1fWjl5HQage5vppki0dNUMArc_z6urldF/view?usp=sharing)
 
 ### Libraries used 
 
