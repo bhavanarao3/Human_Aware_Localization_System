@@ -23,7 +23,7 @@ HALS achieves this functionality through its two core components: an object dete
 
 HALS demonstrates high performance and reliability, even in CPU-bound environments, offering real-time human detection and localization with impressive precision. For demonstration purposes, HALS has been tested using the front camera of an iPhone 15 Pro, allowing easy replication of the demo setup on personal devices for hands-on testing and exploration.
 
-### AIP WOrkflow
+### AIP Workflow
 This project was developed using the Agile Development Process (AIP) along with pair programming (with a driver and navigator), with a focus on test-driven development (TDD). This sheet has the product backlog, iteration backlogs, and work log for each task done to develop HALS. The end of each iteration is even tagged to distinguish each sprint. Further, the link to the sprint planning and review meeting notes devised to overview each iteration sprint to develop HALS in the most efficient way possible is attached [here](https://docs.google.com/spreadsheets/d/1BkUKRTix_gpAeI8nEOIU-Vc7oSzQCU-JUhH3wqEv24I/edit?gid=0#gid=0).
 
 A short video providing a brief overview of the project and the details explaining the AIP process used is embedded below. A direct link to the same can also be found [here]()
@@ -33,6 +33,9 @@ A short video providing a brief overview of the project and the details explaini
 This project leverages the OpenCV library for a range of essential computer vision functionalities and tools. Additionally, HALS incorporates a YOLO v5 model, a deep-learning-based object detection system initially developed by Joseph Redmon . This model enables HALS to detect humans in real time from a continuous video feed, with further tracking achieved through specialized algorithms. The YOLO v5 model is accessed in its ONNX format, converted from a YOLO v5s model trained in PyTorch.
 
 Each of these libraries is fundamental to HALS’s operation. OpenCV handles a variety of image processing tasks—such as resizing, reshaping, scaling, and formatting—crucial for pre-processing and managing video data. YOLO v5, a benchmark for object detection, provides accurate human localization capabilities, which HALS then uses to estimate the exact position of detected humans relative to the camera. Using the YOLO v5 model in ONNX format streamlines compatibility and provides flexibility for handling outputs in object detection tasks. Together, these tools form the backbone of HALS’s robust and efficient detection and localization system.
+
+For our perception system, we utilized DroidCam on a mobile phone rather than a laptop’s built-in webcam, enhancing the system's portability and simulating the role of a camera on a robot. DroidCam is a mobile application that enables a smartphone camera to function as a webcam for computers over Wi-Fi or USB, offering a flexible and high-quality video feed. This approach allows for more realistic testing, as the mobile setup can be positioned or mounted in various configurations, mirroring robot-mounted camera applications.
+
 ### Demo Output 
 ![Screenshot 2024-10-30 23:26:28](https://github.com/user-attachments/assets/25dc68aa-8391-4ae8-9343-b637d2e0aee8)
 ### Building and Running the Code
@@ -102,7 +105,7 @@ You can also get a code coverage report for the shell-app target, instead of the
   open build/app_coverage/index.html
 ```
 
-### Google COding Style 
+### Google Coding Style 
 To check how the written code conforms to the Google C++ style guide, look at the ```results/cpplint_output.png``` and file to see the output on using the Cpplint tool on this project. You should not be able to see any issues or problems, with all the files processed successfully.
 
 This can be self-verified as well by running the following command in the highest-level directory of the project.
