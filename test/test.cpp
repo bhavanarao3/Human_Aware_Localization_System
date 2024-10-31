@@ -54,8 +54,7 @@ TEST_F(TrackerTest, PixelToCameraFrameTest) {
   std::vector<std::vector<float>> coordinates =
       tracker->pixelToCameraFrame(prediction_pixels);
 
-  // Check if the returned coordinates are in the expected range (this is just
-  // an example)
+  // Check if the returned coordinates are in the expected range
   for (const auto& coord : coordinates) {
     EXPECT_EQ(coord.size(), 3)
         << "Each coordinate should have 3 dimensions (x, y, z).";
@@ -85,8 +84,8 @@ class DetectorTest : public ::testing::Test {
   void SetUp() override {
     // Initialize the detector with dummy paths.
     detector = std::make_unique<Detector>(
-        "/home/bhavana/Human_Aware_Localization_System/models/yolov5s.onnx",
-        "/home/bhavana/Human_Aware_Localization_System/models/coco.names");
+        "/home/bhavana/test/Human_Aware_Localization_System/models/yolov5s.onnx",
+        "/home/bhavana/test/Human_Aware_Localization_System/models/coco.names");
   }
 
   std::unique_ptr<Detector> detector;  // Use unique_ptr
@@ -101,7 +100,7 @@ TEST_F(DetectorTest, InitializationTest) {
 TEST_F(DetectorTest, LoadInputImageTest) {
   cv::Mat input_image =
       cv::imread(
-          "/home/bhavana/Human_Aware_Localization_System/images/"
+          "/home/bhavana/test/Human_Aware_Localization_System/images/"
           "test_image.jpg");  // Replace with your input image path
   ASSERT_FALSE(input_image.empty())
       << "Input image should be loaded successfully.";
@@ -116,7 +115,7 @@ TEST_F(DetectorTest, LoadInputImageTest) {
 TEST_F(DetectorTest, DetectReturnsSameImageSize) {
   cv::Mat input_image =
       cv::imread(
-          "/home/bhavana/Human_Aware_Localization_System/images/"
+          "/home/bhavana/test/Human_Aware_Localization_System/images/"
           "test_image.jpg");  // Replace with your input image path
   ASSERT_FALSE(input_image.empty())
       << "Input image should be loaded successfully.";
@@ -132,7 +131,7 @@ TEST_F(DetectorTest, DetectReturnsSameImageSize) {
 TEST_F(DetectorTest, DetectReturnsNonEmptyImage) {
   cv::Mat input_image =
       cv::imread(
-          "/home/bhavana/Human_Aware_Localization_System/images/"
+          "/home/bhavana/test/Human_Aware_Localization_System/images/"
           "test_image.jpg");  // Replace with your input image path
   ASSERT_FALSE(input_image.empty())
       << "Input image should be loaded successfully.";
