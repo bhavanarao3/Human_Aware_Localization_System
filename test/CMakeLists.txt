@@ -17,6 +17,7 @@ target_link_libraries(cpp-test PUBLIC
   # list of libraries:
   gtest
   myHumanDetector
+  myHumanTracker
   ${OpenCV_LIBS} # Add OpenCV libraries here
   )
 
