@@ -42,9 +42,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y software-properties-common
-          sudo add-apt-repository -y ppa:opencv/ppa  # Add OpenCV PPA
-          sudo apt update
-          sudo apt install -y doxygen lcov gcovr libopencv-dev  # Install OpenCV
+          sudo apt install -y doxygen lcov gcovr libopencv-dev  # Install OpenCV from default repositories
 
       # Build, run unit test, and generate coverage report
       - name: Configure CMake flags and build executables
